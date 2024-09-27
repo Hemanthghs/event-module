@@ -1,0 +1,36 @@
+syntax = "proto3";
+package etm.v1;
+
+import "google/api/annotations.proto";
+import "etm/v1/genesis.proto";
+
+option go_package = "github.com/rollchains/eventchain/x/etm/types";
+
+// Query provides defines the gRPC querier service.
+service Query {
+  // Params queries all parameters of the module.
+  rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
+    option (google.api.http).get = "/etm/v1/params";
+  }
+
+  rpc GetEvent(QueryGetEventRequest) returns (QueryGetEventResponse) {
+    option (google.api.http).get = "/etm/v1/name/{organizer}";
+  }
+}
+
+// QueryParamsRequest is the request type for the Query/Params RPC method.
+message QueryParamsRequest {}
+
+// QueryParamsResponse is the response type for the Query/Params RPC method.
+message QueryParamsResponse {
+  // params defines the parameters of the module.
+  Params params = 1;
+}
+
+message QueryGetEventRequest {
+  string organizer = 1;
+}
+
+message QueryGetEventResponse {
+  string name = 1;
+}

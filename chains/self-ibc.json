@@ -1,0 +1,168 @@
+{
+    "chains": [
+        {
+            "name": "eventchain",
+            "chain_id": "localchain-1",
+            "docker_image": {
+                "repository": "eventchain",
+                "version": "local",
+                "uid-gid": ""
+            },
+            "gas_prices": "0.0uevent",
+            "gas_adjustment": 2,
+            "genesis": {
+                "modify": [
+                    {
+                        "key": "app_state.gov.params.voting_period",
+                        "value": "10s"
+                    },
+                    {
+                        "key": "app_state.gov.params.max_deposit_period",
+                        "value": "10s"
+                    },
+                    {
+                        "key": "app_state.gov.params.min_deposit.0.denom",
+                        "value": "uevent"
+                    },
+                    {
+                        "key": "app_state.gov.params.min_deposit.0.amount",
+                        "value": "1"
+                    }
+                ],
+                "accounts": [
+                    {
+                        "name": "acc0",
+                        "amount": "25000000000%DENOM%",
+                        "address": "event1hj5fveer5cjtn4wd6wstzugjfdxzl0xp0a2w8n",
+                        "mnemonic": "decorate bright ozone fork gallery riot bus exhaust worth way bone indoor calm squirrel merry zero scheme cotton until shop any excess stage laundry"
+                    },
+                    {
+                        "name": "acc1",
+                        "amount": "24000000000%DENOM%",
+                        "address": "event1efd63aw40lxf3n4mhf7dzhjkr453axurnfe2w6",
+                        "mnemonic": "wealth flavor believe regret funny network recall kiss grape useless pepper cram hint member few certain unveil rather brick bargain curious require crowd raise"
+                    },
+                    {
+                        "name": "user0",
+                        "amount": "100000%DENOM%",
+                        "address": "event12xsq9xfrplpwgg2gpujrxqv6m6hp5ku36542p3",
+                        "mnemonic": "chase submit champion half legal stomach witness height flight antenna rate visit frog spice comic scrap bargain genius race spatial benefit dismiss attitude aim"
+                    },
+                    {
+                        "name": "user1",
+                        "amount": "100000%DENOM%",
+                        "address": "event1nua6dqn6has2hqtc0y0e6kjrpxslxrsyte7w30",
+                        "mnemonic": "under subway alpha ankle waste napkin evoke topic switch embody element culture lonely lend food bench buzz will episode artwork fit faint flag cricket"
+                    }
+                ]
+            },
+            "config_file_overrides": [
+                {
+                    "file": "config/app.toml",
+                    "paths": {
+                        "api.enabled-unsafe-cors": true
+                    }
+                },
+                {
+                    "file": "config/config.toml",
+                    "paths": {
+                        "rpc.cors_allowed_origins": [
+                            "*"
+                        ]
+                    }
+                }
+            ],
+            "ibc_paths": [
+                "localchain-1_localchain-2"
+            ],
+            "number_vals": 1,
+            "number_node": 0,
+            "chain_type": "cosmos",
+            "coin_type": 118,
+            "binary": "eventd",
+            "bech32_prefix": "event",
+            "denom": "uevent",
+            "trusting_period": "336h",
+            "debugging": false,
+            "block_time": "2000ms",
+            "host_port_override": {
+                "1317": "1317",
+                "26656": "26656",
+                "26657": "26657",
+                "9090": "9090"
+            },
+            "ics_version_override": {}
+        },
+        {
+            "name": "eventchain",
+            "chain_id": "localchain-2",
+            "docker_image": {
+                "repository": "eventchain",
+                "version": "local",
+                "uid-gid": ""
+            },
+            "gas_prices": "0.0uevent",
+            "gas_adjustment": 2,
+            "genesis": {
+                "modify": [
+                    {
+                        "key": "app_state.gov.params.voting_period",
+                        "value": "3s"
+                    },
+                    {
+                        "key": "app_state.gov.params.max_deposit_period",
+                        "value": "10s"
+                    },
+                    {
+                        "key": "app_state.gov.params.min_deposit.0.denom",
+                        "value": "uevent"
+                    },
+                    {
+                        "key": "app_state.gov.params.min_deposit.0.amount",
+                        "value": "1"
+                    }
+                ],
+                "accounts": [
+                    {
+                        "name": "acc0",
+                        "amount": "25000000000%DENOM%",
+                        "address": "event1hj5fveer5cjtn4wd6wstzugjfdxzl0xp0a2w8n",
+                        "mnemonic": "decorate bright ozone fork gallery riot bus exhaust worth way bone indoor calm squirrel merry zero scheme cotton until shop any excess stage laundry"
+                    },
+                    {
+                        "name": "acc1",
+                        "amount": "24000000000%DENOM%",
+                        "address": "event1efd63aw40lxf3n4mhf7dzhjkr453axurnfe2w6",
+                        "mnemonic": "wealth flavor believe regret funny network recall kiss grape useless pepper cram hint member few certain unveil rather brick bargain curious require crowd raise"
+                    },
+                    {
+                        "name": "user0",
+                        "amount": "100000%DENOM%",
+                        "address": "event1gan5d3cf33csaw4dlxttyd5mvf9l3jlf99gaf8",
+                        "mnemonic": "diamond ignore artist win strong resemble milk jewel jump canvas flat canoe inquiry tomato race hole poverty short love stadium disease hazard setup hazard"
+                    },
+                    {
+                        "name": "user1",
+                        "amount": "100000%DENOM%",
+                        "address": "event1ew60r55rgthzz5ve058sfxktw2p69gghf4x0rl",
+                        "mnemonic": "addict spot slot what february foil certain vague giggle stereo around measure spy chef giant venue toilet erode stick trial quit truly glue record"
+                    }
+                ]
+            },
+            "ibc_paths": [
+                "localchain-1_localchain-2"
+            ],
+            "number_vals": 1,
+            "number_node": 0,
+            "chain_type": "cosmos",
+            "coin_type": 118,
+            "binary": "eventd",
+            "bech32_prefix": "event",
+            "denom": "uevent",
+            "trusting_period": "336h",
+            "debugging": false,
+            "block_time": "2000ms",
+            "ics_version_override": {}
+        }
+    ]
+}
